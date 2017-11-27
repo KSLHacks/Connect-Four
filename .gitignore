@@ -59,6 +59,3 @@ typings/
 
 # VS Code
 .vscode
-
-# Typescript tsc
-lib
