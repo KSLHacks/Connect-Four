@@ -1,0 +1,19 @@
+body {
+  margin: 40px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 750px;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 100%;
+  width: 100px;
+  height: 100px;
+}
