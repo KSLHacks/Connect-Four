@@ -9,6 +9,11 @@ const defaultBoardState = {
 
 const board = (prevState = defaultBoardState, action) => {
   // Action conditional
+  if (action.type === 'NEW_GAME') {
+    console.log('board reset', defaultBoardState)
+    return { ...defaultBoardState }
+  }
+
   if (action.type === 'TOKEN_DROP') {
     // Update column with token drop
     const activeColumn = prevState[action.column]
@@ -21,6 +26,8 @@ const board = (prevState = defaultBoardState, action) => {
 
     // update space with current player
     var newState = { ...prevState }
+    newState[action.column] = [...prevState[action.column]]
+
     newState[action.column][emptyIndex] = action.player
 
     return {

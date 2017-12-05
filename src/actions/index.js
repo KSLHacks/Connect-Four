@@ -52,11 +52,19 @@ export const tokenDrop = (player, column) => {
     dispatch({ type: 'TOKEN_DROP', player, column })
 
     // Check for winning condition
-    const { board } = getState()
-    console.log(board)
+    const { board, turns } = getState()
     if (checkWinningConditions(board, player)) {
       dispatch({ type: 'UPDATE_WINNER', player })
     }
-    console.log(player)
+
+    console.log(turns)
+    // Check for tie condition
+    if (turns === 42) {
+      dispatch({ type: 'UPDATE_TIE' })
+    }
   }
+}
+
+export const newGame = () => {
+  return { type: 'NEW_GAME' }
 }
