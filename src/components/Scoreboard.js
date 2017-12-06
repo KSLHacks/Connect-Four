@@ -1,16 +1,32 @@
 import React from 'react'
 
-const getScoreboard = (winner, scorePlayer1, scorePlayer2, currentPlayer) => {
-  if(currentPlayer === 'player1') {
+const getScoreboard = (winner, scorePlayer1, scorePlayer2, currentPlayer, isBoardEnabled) => {
+  if (isBoardEnabled) {
+    if(currentPlayer === 'player1') {
+      return(
+        <div className='scoreboard'>
+          <div className='active-player'>
+            &rarr;
+          </div>
+          <div>
+            Player1: {scorePlayer1} - Player2: {scorePlayer2}
+          </div>
+          <div>
+            &larr;
+          </div>
+        </div>
+      )
+    }
+
     return(
       <div className='scoreboard'>
-        <div className='active-player'>
+        <div>
           &rarr;
         </div>
         <div>
           Player1: {scorePlayer1} - Player2: {scorePlayer2}
         </div>
-        <div>
+        <div className='active-player'>
           &larr;
         </div>
       </div>
@@ -25,7 +41,7 @@ const getScoreboard = (winner, scorePlayer1, scorePlayer2, currentPlayer) => {
       <div>
         Player1: {scorePlayer1} - Player2: {scorePlayer2}
       </div>
-      <div className='active-player'>
+      <div>
         &larr;
       </div>
     </div>
@@ -37,10 +53,10 @@ const getScoreboard = (winner, scorePlayer1, scorePlayer2, currentPlayer) => {
  */
 class Scoreboard extends React.Component {
   render () {
-    const { winner, scorePlayer1, scorePlayer2, currentPlayer } = this.props
+    const { winner, scorePlayer1, scorePlayer2, currentPlayer, isBoardEnabled } = this.props
     return (
       <div className='center'>
-        {getScoreboard(winner, scorePlayer1, scorePlayer2, currentPlayer)}
+        {getScoreboard(winner, scorePlayer1, scorePlayer2, currentPlayer, isBoardEnabled)}
         <h3>
           Winner: {winner}
         </h3>

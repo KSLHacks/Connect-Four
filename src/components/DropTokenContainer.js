@@ -5,7 +5,7 @@ import DropToken from './DropToken'
 const mapStateToProps = (state) => {
   return {
     currentPlayer: state.currentPlayer,
-    boardEnabled: state.gameInProgress
+    isBoardEnabled: state.gameInProgress
   }
 }
 

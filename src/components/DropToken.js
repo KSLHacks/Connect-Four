@@ -1,13 +1,13 @@
 import React from 'react'
 
-const getTokenHover = (currentPlayer, column, boardEnabled, tokenDropDispatch) => {
+const getTokenHover = (currentPlayer, column, isBoardEnabled, tokenDropDispatch) => {
     if (currentPlayer === 'player1') {
         return(
-          <div className='drop-blue slot' onClick={tokenDropDispatch(currentPlayer, column, boardEnabled)} />
+          <div className='drop-blue slot' onClick={tokenDropDispatch(currentPlayer, column, isBoardEnabled)} />
         )
     }
     return(
-      <div className='drop-red slot' onClick={tokenDropDispatch(currentPlayer, column, boardEnabled)} />
+      <div className='drop-red slot' onClick={tokenDropDispatch(currentPlayer, column, isBoardEnabled)} />
     )
 }
 
@@ -16,9 +16,9 @@ const getTokenHover = (currentPlayer, column, boardEnabled, tokenDropDispatch) =
  */
 class DropToken extends React.Component {
   render () {
-    const { currentPlayer, column, boardEnabled, tokenDropDispatch } = this.props
+    const { currentPlayer, column, isBoardEnabled, tokenDropDispatch } = this.props
     return(
-      getTokenHover(currentPlayer, column, boardEnabled, tokenDropDispatch)
+      getTokenHover(currentPlayer, column, isBoardEnabled, tokenDropDispatch)
     )
   }
 }
