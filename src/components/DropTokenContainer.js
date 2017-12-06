@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
 import { tokenDrop } from '../actions'
-import Column from './Column'
+import DropToken from './DropToken'
 
 const mapStateToProps = (state) => {
   return {
-    slotOwner: state.board
+    currentPlayer: state.currentPlayer,
+    boardEnabled: state.gameInProgress
   }
 }
 
@@ -16,6 +17,6 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-const ColumnContainer = connect(mapStateToProps, mapDispatchToProps)(Column)
+const DropTokenContainer = connect(mapStateToProps, mapDispatchToProps)(DropToken)
 
-export default ColumnContainer
+export default DropTokenContainer

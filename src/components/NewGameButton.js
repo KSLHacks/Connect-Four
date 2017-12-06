@@ -3,9 +3,11 @@ import React from 'react'
 const getButton = (isVisible, newGameDispatch) => {
   if (isVisible) {
     return (
-      <button onClick={newGameDispatch}>
-        New Game
-      </button>
+      <center>
+        <button onClick={newGameDispatch}>
+          New Game
+        </button>
+      </center>
     )
   }
 

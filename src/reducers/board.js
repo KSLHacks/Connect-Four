@@ -10,7 +10,6 @@ const defaultBoardState = {
 const board = (prevState = defaultBoardState, action) => {
   // Action conditional
   if (action.type === 'NEW_GAME') {
-    console.log('board reset', defaultBoardState)
     return { ...defaultBoardState }
   }
 

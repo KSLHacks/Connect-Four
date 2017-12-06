@@ -57,7 +57,6 @@ export const tokenDrop = (player, column) => {
       dispatch({ type: 'UPDATE_WINNER', player })
     }
 
-    console.log(turns)
     // Check for tie condition
     if (turns === 42) {
       dispatch({ type: 'UPDATE_TIE' })

@@ -9,32 +9,56 @@ body {
   height: 500px
 }
 
-.empty {
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
+.player1, .player2, .empty, .slot {
+  border: 3px solid rgb(121, 121, 121);
+  border-radius: 50px;
   padding: 10px;
-  font-size: 100%;
   width: 50px;
   height: 50px;
+}
+
+.empty {
+  background-color: rgb(255, 255, 255);
 }
 
 .player1 {
   background-color: rgb(0, 110, 255);
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 100%;
-  width: 50px;
-  height: 50px;
 }
 
 .player2 {
+  background-color: rgb(252, 0, 0);
+}
+
+.scoreboard {
+  display: flex;
+}
+
+.scoreboard > div {
+  flex: 1;
+}
+
+.center {
+  text-align: center;
+}
+
+.active-player {
+  border: 3px solid rgb(24, 134, 24);
+}
+
+.drop-red {
+  background-color: rgb(255, 255, 255);
+  border: 3px solid rgb(255, 255, 255);
+}
+
+.drop-red:hover {
   background-color: rgb(255, 0, 0);
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 100%;
-  width: 50px;
-  height: 50px;
+}
+
+.drop-blue {
+  background-color: rgb(255, 255, 255);
+  border: 3px solid rgb(121, 121, 121);
+}
+
+.drop-blue:hover {
+  background-color: rgb(0, 110, 255);
 }

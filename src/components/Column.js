@@ -1,17 +1,16 @@
 import React from 'react'
+import DropTokenContainer from './DropTokenContainer'
 
 /**
  * 1x7 column
  */
 class App extends React.Component {
   render () {
-    const { currentPlayer, slotOwner, column, boardEnabled, tokenDropDispatch } = this.props
+    const { slotOwner, column } = this.props
     return (
       <div className='column-grid'>
         <center>
-          <button className='drop-button' onClick={tokenDropDispatch(currentPlayer, column, boardEnabled)}>
-            Drop
-          </button>
+          <DropTokenContainer column={column} />
           <div className={slotOwner[column][6]} />
           <div className={slotOwner[column][5]} />
           <div className={slotOwner[column][4]} />
