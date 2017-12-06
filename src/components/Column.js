@@ -8,27 +8,18 @@ class App extends React.Component {
     const { currentPlayer, slotOwner, column, boardEnabled, tokenDropDispatch } = this.props
     return (
       <div className='column-grid'>
-        <button className={slotOwner[column][6]} onClick={tokenDropDispatch(currentPlayer, column, boardEnabled)}>
-          {column}:6 { slotOwner[column][6] }
-        </button>
-        <button className={slotOwner[column][5]} onClick={tokenDropDispatch(currentPlayer, column, boardEnabled)}>
-          {column}:5 { slotOwner[column][5] }
-        </button>
-        <button className={slotOwner[column][4]} onClick={tokenDropDispatch(currentPlayer, column, boardEnabled)}>
-          {column}:4 { slotOwner[column][4] }
-        </button>
-        <button className={slotOwner[column][3]} onClick={tokenDropDispatch(currentPlayer, column, boardEnabled)}>
-          {column}:3 { slotOwner[column][3] }
-        </button>
-        <button className={slotOwner[column][2]} onClick={tokenDropDispatch(currentPlayer, column, boardEnabled)}>
-          {column}:2 { slotOwner[column][2] }
-        </button>
-        <button className={slotOwner[column][1]} onClick={tokenDropDispatch(currentPlayer, column, boardEnabled)}>
-          {column}:1 { slotOwner[column][1] }
-        </button>
-        <button className={slotOwner[column][0]} onClick={tokenDropDispatch(currentPlayer, column, boardEnabled)}>
-          {column}:0 { slotOwner[column][0] }
-        </button>
+        <center>
+          <button className='drop-button' onClick={tokenDropDispatch(currentPlayer, column, boardEnabled)}>
+            Drop
+          </button>
+          <div className={slotOwner[column][6]} />
+          <div className={slotOwner[column][5]} />
+          <div className={slotOwner[column][4]} />
+          <div className={slotOwner[column][3]} />
+          <div className={slotOwner[column][2]} />
+          <div className={slotOwner[column][1]} />
+          <div className={slotOwner[column][0]} />
+        </center>
       </div>
     )
   }
