@@ -56,7 +56,7 @@ body {
 
 .drop-blue {
   background-color: rgb(255, 255, 255);
-  border: 3px solid rgb(121, 121, 121);
+  border: 3px solid rgb(255, 255, 255);
 }
 
 .drop-blue:hover {
